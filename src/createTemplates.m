@@ -1,4 +1,4 @@
-% This script is used to
+% This script is used to create a new template
 
 % The template folder
 templateDir = '../templates';

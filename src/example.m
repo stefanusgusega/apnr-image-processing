@@ -35,6 +35,9 @@ figure, imshow(imclean), title('imclean');
 st = regionprops(imclean, 'BoundingBox', 'Area', 'Image');
 
 % Draw the box
+letters = [];
+
+
 for k = 1: length(st)
     ow = length(st(k).Image(1, :))
     oh = length(st(k).Image(:, 1))
@@ -44,6 +47,14 @@ for k = 1: length(st)
 %     figure,imshow(imcrop(imcr, thisBB));
         rectangle('Position', [thisBB(1), thisBB(2), thisBB(3), thisBB(4)],...
         'EdgeColor','g','LineWidth',2)
+
+        thisLetter = st(k).Image;
+
+        detect = detectLetter(thisLetter);
+        letters = [letters detect];
     end
-    
 end
+
+disp(letters)
+
+

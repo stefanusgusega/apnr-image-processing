@@ -46,8 +46,9 @@ else
     st = regionprops(imclean, 'BoundingBox', 'Area', 'Image');
 end
 
-% Draw the box
 for k = 1:length(st)
+    letters = [];
+
     ow = length(st(k).Image(1, :))
     oh = length(st(k).Image(:, 1))
     % The height of bounding box should be in range (0.2*h, 0.8*h)
@@ -57,6 +58,13 @@ for k = 1:length(st)
         %     figure,imshow(imcrop(imcr, thisBB));
         rectangle('Position', [thisBB(1), thisBB(2), thisBB(3), thisBB(4)], ...
         'EdgeColor', 'g', 'LineWidth', 2)
+
+        thisLetter = st(k).Image;
+
+        detect = detectLetter(thisLetter);
+        letters = [letters detect];
     end
 
 end
+
+disp(letters)

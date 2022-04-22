@@ -45,9 +45,9 @@ if bwarea(imclean) > bwarea(~imclean)
 else
     st = regionprops(imclean, 'BoundingBox', 'Area', 'Image');
 end
-
+letters = [];
 for k = 1:length(st)
-    letters = [];
+    
 
     ow = length(st(k).Image(1, :))
     oh = length(st(k).Image(:, 1))
@@ -67,4 +67,6 @@ for k = 1:length(st)
 
 end
 
-disp(letters)
+disp("Detection Result:");
+disp(letters);
+

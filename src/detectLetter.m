@@ -5,7 +5,7 @@ function letter = detectLetter(imgIn)
     % load templates
     load newTemplates;
     tempLabel = [
-        'A','B','C','D','E','F','G','H','I','J','K','L','M', ...
+        'A','B','C','D','E','F','G','H','I','I','J','K','L','M', ...
         'N','O','P','Q','R','S','T','U','V','W','X','Y','Z', ...
         '1','2','3','4','5','6','7','8','9','0'
     ];
@@ -16,7 +16,7 @@ function letter = detectLetter(imgIn)
     
 
     rec=[];
-    for n=1:36
+    for n=1:37
         % access one template
         temp = imbinarize(newTemplates(:,((n-1)*col)+1:n*col));
 
@@ -32,5 +32,6 @@ function letter = detectLetter(imgIn)
     
     % find label
     letter = tempLabel(ind);
+
     
 end

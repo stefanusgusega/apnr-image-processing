@@ -1,4 +1,4 @@
-im = imread('../images/plat4.jpg');
+im = imread('../images/plat2.jpg');
 imgray = rgb2gray(im);
 imbin = imbinarize(imgray);
 imedge = edge(imgray, 'sobel');

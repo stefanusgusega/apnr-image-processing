@@ -9,8 +9,10 @@ function bb = getLargestBB(segments)
     bb = segments.BoundingBox;
 
     for i = 1:length(segments)
+        ow = length(segments(i).Image(1, :));
+        oh = length(segments(i).Image(:, 1));
 
-        if segments(i).Area > maxa
+        if (segments(i).Area > maxa) & oh < ow
             maxa = segments(i).Area;
             bb = segments(i).BoundingBox;
         end

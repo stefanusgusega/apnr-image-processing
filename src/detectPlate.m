@@ -34,7 +34,7 @@ function plateImg = detectPlate(imgIn)
     figure, imshow(imedge), title('imedge');
 
     % Perform image dilation
-    dilationSE = strel('line', 6, 45);
+    dilationSE = strel('line', 4, 45);
     dilated = imdilate(imedge, dilationSE);
 
     figure, imshow(dilated), title('dilated');
@@ -44,7 +44,7 @@ function plateImg = detectPlate(imgIn)
     figure, imshow(filled), title('filled');
 
     % Morphological image opening onto the filled image
-    openingSE2 = strel('disk', diskSECoeff);
+    openingSE2 = strel('disk', round(diskSECoeff / 2));
     openedImg2 = imopen(filled, openingSE2);
     figure, imshow(openedImg2), title('open 2');
 

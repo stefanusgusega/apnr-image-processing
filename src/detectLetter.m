@@ -32,5 +32,5 @@ function letter = detectLetter(imgIn)
 
     % find label
     letter = tempLabel(ind);
-
+    
 end

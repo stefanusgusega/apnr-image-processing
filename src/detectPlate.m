@@ -6,7 +6,7 @@ function plateImg = detectPlate(imgIn)
     % This function takes an image as input and then return a greyscale of plate image
 
     % Convert image to grayscale first.
-    imgray = rgb2gray(imgIn);
+    imgray = im2gray(imgIn);
 
     [h, w] = size(imgray);
 
@@ -33,7 +33,7 @@ function plateImg = detectPlate(imgIn)
     figure, imshow(imedge), title('imedge');
 
     % Perform image dilation
-    dilationSE = strel('line', 7, 45);
+    dilationSE = strel('line', 6, 45);
     dilated = imdilate(imedge, dilationSE);
 
     figure, imshow(dilated), title('dilated');

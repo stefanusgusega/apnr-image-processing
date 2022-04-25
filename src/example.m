@@ -1,7 +1,7 @@
-im = imread('../images/3cropped.jpg');
+im = imread('../images/plate/14.jpg');
 plateIm = detectPlate(im);
 imshow(plateIm);
-segments = segmentLetter(plateIm);
+segments = segmentLetter(im2gray(im));
 
 letters = [];
 

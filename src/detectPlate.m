@@ -13,7 +13,7 @@ function plateImg = detectPlate(imgIn)
     diskSECoeff = max(1, round(1/30 * h));
 
     % Apply contrast enhancement using histogram equalization
-    imhisteq = histeq(imgray);
+    imhisteq = histogram_equalization(imgray);
     figure, imshow(imhisteq), title('imhisteq');
 
     % Morphological image opening

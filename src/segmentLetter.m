@@ -1,9 +1,8 @@
 function segments = segmentLetter(imgIn)
-    %myFun - Description
+    %segmentLetter - Return segments from the plate image
     %
-    % Syntax: output = myFun(input)
-    %
-    % Long description
+    % Syntax: segments = segmentLetter(imgIn)
+
     % Apply binarization towards the image
     imbin = imbinarize(imgIn);
 

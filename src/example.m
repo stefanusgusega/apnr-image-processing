@@ -1,4 +1,4 @@
-im = imread('../images/2.jpg');
+im = imread('../images/1.jpg');
 plateIm = detectPlate(im);
 imshow(plateIm);
 segments = segmentLetter(plateIm);

@@ -2,14 +2,15 @@
 This is the repository for Task 4 of Image Processing and Interpretation : Automatic Plate Number Recognition (APNR) using MATLAB
 
 ## 💁‍♂️ What is this project about?
-We implement many operations to do automatic plate number recognition by performing plate detection, character segmentation, and character recognition using template matching technique. We also implement image processing operations such as grayscale transformation, histogram equalization, edge detection, and tresholding to support the performance result. Also, there is a GUI for those operations, so it can load image that you desire. This project is implemented using MATLAB.
+We implement many operations to do automatic plate number recognition by performing plate detection, character segmentation, and character recognition using template matching technique. We also implement image processing operations such as grayscale transformation, histogram equalization, edge detection, and thresholding to support the performance result. Also, there is a GUI for those operations, so it can load image that you desire. This project is implemented using MATLAB.
 
 ## 🏃‍♂️ How to run the GUI?
 1. Make sure you've installed MATLAB on your device.
 2. Go to ```src/``` folder.
 3. Double-click ```app.mlapp```.
-4. A window will be opened and the GUI is being run and every tab is already initiated with images.
-5. Sample images for every task can be found in the ```images/``` folder.
+4. A window will be opened and the GUI is being run.
+5. Switch the *Already Plate?* to *Yes*, if the image is already a tidy plate image. Default: *No*.
+6. Sample images for every task can be found in the ```images/``` folder.
 
 ## 🌱 Authors
 - 13518089 Annisa Rahim

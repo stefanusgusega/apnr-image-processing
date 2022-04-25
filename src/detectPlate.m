@@ -27,7 +27,8 @@ function plateImg = detectPlate(imgIn)
     imbin = imbinarize(subtracted);
 
     % Edge detection using Sobel
-    imedge = edge(imbin, 'sobel');
+    %imedge = edge(imbin, 'sobel');
+    imedge = detect_edge(imbin, 'sobel', [], [], [], [], [], []);
 
     figure, imshow(subtracted), title('subtracted');
     figure, imshow(imedge), title('imedge');

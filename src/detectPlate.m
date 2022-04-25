@@ -54,18 +54,7 @@ function plateImg = detectPlate(imgIn)
     regions = regionprops(eroded, 'BoundingBox', 'Area', 'Image');
     % disp(regions);
 
-    area = regions.Area;
-    maxa = area;
-    boundingBox = regions.BoundingBox;
-
-    for i = 1:length(regions)
-
-        if regions(i).Area > maxa
-            maxa = regions(i).Area;
-            boundingBox = regions(i).BoundingBox;
-        end
-
-    end
+    boundingBox = getLargestBB(regions);
 
     imcr = imcrop(imgray, boundingBox);
     figure, imshow(imcr), title('imcr');
@@ -84,7 +73,7 @@ function plateImg = detectPlate(imgIn)
         figure, imshow(croppedbin), title('croppedbin');
     end
 
-    finalBB = segments(1).BoundingBox;
+    finalBB = getLargestBB(segments);
 
     plateImg = imcrop(imcr, finalBB);
     figure, imshow(plateImg), title('plateImg');
